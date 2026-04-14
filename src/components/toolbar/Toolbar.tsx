@@ -41,18 +41,14 @@ export function Toolbar(props: { printRef: RefObject<HTMLDivElement | null> }) {
       </div>
 
       <div className="flex items-center gap-2">
-        <label className="text-xs font-medium text-zinc-600">Template</label>
-        <select
-          value={template}
-          onChange={(e) => setTemplate(e.target.value as CVTemplateKey)}
-          className="h-9 rounded-lg border border-zinc-300 bg-white px-2 text-sm"
+        <button
+          type="button"
+          onClick={() => setTemplate(template === 'classic' ? 'modern' : 'classic')}
+          className="h-9 rounded-lg border border-zinc-300 bg-white px-3 text-sm hover:bg-zinc-50"
+          aria-label="Toggle template"
         >
-          {templates.map((t) => (
-            <option key={t.key} value={t.key}>
-              {t.label}
-            </option>
-          ))}
-        </select>
+          Template: <span className="font-semibold">{templates.find((t) => t.key === template)?.label}</span>
+        </button>
 
         <button
           type="button"
