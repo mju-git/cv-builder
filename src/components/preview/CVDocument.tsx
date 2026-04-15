@@ -46,7 +46,7 @@ export const CVDocument = forwardRef<HTMLDivElement>(function CVDocument(_, ref)
           ref={setRef}
           id="cv-document"
           className={[
-            'rounded-md bg-white text-zinc-950 shadow-sm ring-1 ring-zinc-200 print:shadow-none print:ring-0',
+            'rounded-md bg-white text-zinc-950 shadow-sm print:shadow-none',
           ].join(' ')}
           style={{ width: 794 }}
         >

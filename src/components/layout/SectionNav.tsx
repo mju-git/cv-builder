@@ -23,10 +23,14 @@ export function SectionNav() {
 
     return {
       basics:
-        hasText(cv.basics.name) &&
-        hasText(cv.basics.title) &&
-        hasText(cv.basics.email) &&
-        hasText(cv.basics.phone),
+        hasText(cv.basics.name) ||
+        hasText(cv.basics.title) ||
+        hasText(cv.basics.email) ||
+        hasText(cv.basics.phone) ||
+        hasText(cv.basics.location) ||
+        hasText(cv.basics.linkedin) ||
+        hasText(cv.basics.website) ||
+        hasText(cv.basics.summary),
       experience: hasList(cv.experience),
       education: hasList(cv.education),
       skills: hasList(cv.skills),

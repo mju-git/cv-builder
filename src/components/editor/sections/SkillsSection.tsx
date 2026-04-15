@@ -26,7 +26,7 @@ export function SkillsSection() {
           onClick={() => addEntry('skills')}
           className="h-9 rounded-lg bg-zinc-950 px-3 text-sm font-medium text-white hover:bg-zinc-800"
         >
-          Add group
+          Add
         </button>
       </div>
 

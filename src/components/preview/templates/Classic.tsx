@@ -33,6 +33,15 @@ export function Classic(props: { cv: CVData }) {
 
       <div className="mb-5 border-b border-zinc-200" />
 
+      {cv.basics.summary?.trim() ? (
+        <section className="mb-5">
+          <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
+            SUMMARY
+          </h2>
+          <p className="text-zinc-800">{cv.basics.summary}</p>
+        </section>
+      ) : null}
+
       <section className="mb-5">
         <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
           EXPERIENCE
