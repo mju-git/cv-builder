@@ -23,7 +23,7 @@ export function BasicsSection() {
         <div className="text-sm text-zinc-500">These fields appear at the top of your CV.</div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="space-y-3">
         <Field
           label="Name"
           value={basics.name}

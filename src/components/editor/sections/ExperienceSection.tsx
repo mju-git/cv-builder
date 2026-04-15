@@ -91,7 +91,7 @@ export function ExperienceSection() {
                 >
                   {isExpanded ? (
                     <div className="mt-3 space-y-3">
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-3">
                         <Field
                           label="Job title"
                           value={job.jobTitle}
@@ -107,20 +107,18 @@ export function ExperienceSection() {
                           value={job.location}
                           onChange={(v) => updateEntry('experience', job.id, { location: v })}
                         />
-                        <div className="grid grid-cols-2 gap-3">
-                          <Field
-                            label="Start date"
-                            value={job.startDate}
-                            onChange={(v) => updateEntry('experience', job.id, { startDate: v })}
-                            placeholder="Mar 2021"
-                          />
-                          <Field
-                            label="End date"
-                            value={job.endDate}
-                            onChange={(v) => updateEntry('experience', job.id, { endDate: v })}
-                            placeholder="Present"
-                          />
-                        </div>
+                        <Field
+                          label="Start date"
+                          value={job.startDate}
+                          onChange={(v) => updateEntry('experience', job.id, { startDate: v })}
+                          placeholder="Mar 2021"
+                        />
+                        <Field
+                          label="End date"
+                          value={job.endDate}
+                          onChange={(v) => updateEntry('experience', job.id, { endDate: v })}
+                          placeholder="Present"
+                        />
                       </div>
 
                       <div>

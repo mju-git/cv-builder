@@ -80,7 +80,7 @@ export function LanguagesSection() {
                   }
                 >
                   {isExpanded ? (
-                    <div className="mt-3 grid grid-cols-2 gap-3">
+                    <div className="mt-3 space-y-3">
                       <Field
                         label="Language"
                         value={lang.language}

@@ -21,7 +21,7 @@ export function AppShell() {
           <EditorPanel />
         </main>
 
-        <aside className="sticky top-4 h-[calc(100dvh-88px)] self-start overflow-auto rounded-xl border border-zinc-200 bg-white shadow-sm print:static print:h-auto print:overflow-visible print:border-0 print:shadow-none">
+        <aside className="sticky top-4 h-[calc(100dvh-88px)] self-start overflow-y-auto overflow-x-hidden rounded-xl border border-zinc-200 bg-white shadow-sm print:static print:h-auto print:overflow-visible print:border-0 print:shadow-none">
           <PreviewPanel printRef={printRef} />
         </aside>
       </div>

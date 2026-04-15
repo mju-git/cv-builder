@@ -87,7 +87,7 @@ export function CertificationsSection() {
                 >
                   {isExpanded ? (
                     <div className="mt-3 space-y-3">
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-3">
                         <Field
                           label="Name"
                           value={c.name}
@@ -107,7 +107,9 @@ export function CertificationsSection() {
                         <Field
                           label="Credential URL"
                           value={c.credentialUrl ?? ''}
-                          onChange={(v) => updateEntry('certifications', c.id, { credentialUrl: v })}
+                          onChange={(v) =>
+                            updateEntry('certifications', c.id, { credentialUrl: v })
+                          }
                           placeholder="..."
                         />
                       </div>

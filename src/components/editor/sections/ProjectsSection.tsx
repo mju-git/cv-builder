@@ -88,7 +88,7 @@ export function ProjectsSection() {
                 >
                   {isExpanded ? (
                     <div className="mt-3 space-y-3">
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-3">
                         <Field
                           label="Name"
                           value={p.name}
@@ -100,18 +100,16 @@ export function ProjectsSection() {
                           onChange={(v) => updateEntry('projects', p.id, { url: v })}
                           placeholder="github.com/..."
                         />
-                        <div className="grid grid-cols-2 gap-3">
-                          <Field
-                            label="Start date"
-                            value={p.startDate}
-                            onChange={(v) => updateEntry('projects', p.id, { startDate: v })}
-                          />
-                          <Field
-                            label="End date"
-                            value={p.endDate}
-                            onChange={(v) => updateEntry('projects', p.id, { endDate: v })}
-                          />
-                        </div>
+                        <Field
+                          label="Start date"
+                          value={p.startDate}
+                          onChange={(v) => updateEntry('projects', p.id, { startDate: v })}
+                        />
+                        <Field
+                          label="End date"
+                          value={p.endDate}
+                          onChange={(v) => updateEntry('projects', p.id, { endDate: v })}
+                        />
                       </div>
 
                       <div>

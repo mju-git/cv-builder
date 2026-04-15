@@ -87,7 +87,7 @@ export function EducationSection() {
                 >
                   {isExpanded ? (
                     <div className="mt-3 space-y-3">
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-3">
                         <Field
                           label="Degree"
                           value={ed.degree}
@@ -103,18 +103,16 @@ export function EducationSection() {
                           value={ed.location}
                           onChange={(v) => updateEntry('education', ed.id, { location: v })}
                         />
-                        <div className="grid grid-cols-2 gap-3">
-                          <Field
-                            label="Start date"
-                            value={ed.startDate}
-                            onChange={(v) => updateEntry('education', ed.id, { startDate: v })}
-                          />
-                          <Field
-                            label="End date"
-                            value={ed.endDate}
-                            onChange={(v) => updateEntry('education', ed.id, { endDate: v })}
-                          />
-                        </div>
+                        <Field
+                          label="Start date"
+                          value={ed.startDate}
+                          onChange={(v) => updateEntry('education', ed.id, { startDate: v })}
+                        />
+                        <Field
+                          label="End date"
+                          value={ed.endDate}
+                          onChange={(v) => updateEntry('education', ed.id, { endDate: v })}
+                        />
                       </div>
                       <div>
                         <label className="mb-1 block text-sm font-medium">Notes</label>
