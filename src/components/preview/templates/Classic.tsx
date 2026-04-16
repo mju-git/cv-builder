@@ -58,7 +58,8 @@ export function Classic(props: { cv: CVData }) {
                 </div>
               </div>
               <div className="text-[12px] text-zinc-600">
-                {w.company} · {w.location}
+                {w.company}
+                {w.location?.trim() ? ` · ${w.location}` : ''}
               </div>
               <HtmlBullets html={w.descriptionHtml} />
             </div>
@@ -82,7 +83,8 @@ export function Classic(props: { cv: CVData }) {
                 </div>
               </div>
               <div className="text-[12px] text-zinc-600">
-                {e.institution} · {e.location}
+                {e.institution}
+                {e.location?.trim() ? ` · ${e.location}` : ''}
               </div>
               {e.notes?.trim() ? <div className="mt-1 text-zinc-800">{e.notes}</div> : null}
             </div>
