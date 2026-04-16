@@ -3,6 +3,12 @@ import type { CVData } from '../../../types/cv.types';
 function HtmlBullets({ html }: { html: string }) {
   const safe = html?.trim() ? html : '';
   if (!safe) return null;
+  const text = safe
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!text) return null;
   return (
     <div
       className="mt-2 text-zinc-800 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5 [&_p]:m-0"
