@@ -31,27 +31,28 @@ export function Classic(props: { cv: CVData }) {
 
   return (
     <div className="text-[13px] leading-[1.35]">
-      <header className="mb-4">
-        <div className="text-[24px] font-bold leading-tight">{cv.basics.name}</div>
-        <div className="mt-1 text-[14px] font-medium text-zinc-700">{cv.basics.title}</div>
-        <div className="mt-2 text-[12px] text-zinc-700">{contactLine}</div>
-      </header>
+      <header className="mb-5">
+        <div className="text-[28px] font-semibold leading-tight text-zinc-950">
+          {cv.basics.name}
+        </div>
+        <div className="mt-1 text-[14px] font-normal text-zinc-500">{cv.basics.title}</div>
 
-      <div className="mb-5 border-b border-zinc-200" />
+        <hr className="my-3 border-0 border-t border-zinc-200" />
+
+        <div className="text-[11px] text-zinc-500">{contactLine}</div>
+
+        <hr className="my-3 border-0 border-t border-zinc-200" />
+      </header>
 
       {cv.basics.summary?.trim() ? (
         <section className="mb-5">
-          <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-            SUMMARY
-          </h2>
+          <SectionHeading>PROFILE</SectionHeading>
           <p className="text-zinc-800">{cv.basics.summary}</p>
         </section>
       ) : null}
 
       <section className="mb-5">
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          EXPERIENCE
-        </h2>
+        <SectionHeading>EXPERIENCE</SectionHeading>
         <div className="space-y-4">
           {cv.experience.map((w) => (
             <div key={w.id}>
@@ -74,9 +75,7 @@ export function Classic(props: { cv: CVData }) {
       </section>
 
       <section className="mb-5">
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          EDUCATION
-        </h2>
+        <SectionHeading>EDUCATION</SectionHeading>
         <div className="space-y-3">
           {cv.education.map((e) => (
             <div key={e.id}>
@@ -99,9 +98,7 @@ export function Classic(props: { cv: CVData }) {
       </section>
 
       <section className="mb-5">
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          SKILLS
-        </h2>
+        <SectionHeading>SKILLS</SectionHeading>
         <div className="space-y-2">
           {cv.skills.map((g) => (
             <div key={g.id} className="text-zinc-800">
@@ -113,9 +110,7 @@ export function Classic(props: { cv: CVData }) {
       </section>
 
       <section className="mb-5">
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          LANGUAGES
-        </h2>
+        <SectionHeading>LANGUAGES</SectionHeading>
         <div className="space-y-1 text-zinc-800">
           {cv.languages.map((l) => (
             <div key={l.id}>
@@ -126,9 +121,7 @@ export function Classic(props: { cv: CVData }) {
       </section>
 
       <section className="mb-5">
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          PROJECTS
-        </h2>
+        <SectionHeading>PROJECTS</SectionHeading>
         <div className="space-y-4">
           {cv.projects.map((p) => (
             <div key={p.id}>
@@ -152,9 +145,7 @@ export function Classic(props: { cv: CVData }) {
       </section>
 
       <section>
-        <h2 className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-zinc-800">
-          CERTIFICATIONS
-        </h2>
+        <SectionHeading>CERTIFICATIONS</SectionHeading>
         <div className="space-y-4">
           {cv.certifications.map((c) => (
             <div key={c.id}>
@@ -172,6 +163,14 @@ export function Classic(props: { cv: CVData }) {
         </div>
       </section>
     </div>
+  );
+}
+
+function SectionHeading(props: { children: string }) {
+  return (
+    <h2 className="mb-2 border-b border-zinc-200 pb-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-700">
+      {props.children}
+    </h2>
   );
 }
 
